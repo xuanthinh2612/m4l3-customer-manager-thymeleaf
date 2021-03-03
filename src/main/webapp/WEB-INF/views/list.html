@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>List Customer</title>
+<head th:replace="layout::head">
 </head>
 <body>
 
-<h1 align="center">Customer List</h1>
+<h3 align="center">Customer List</h3>
 
 <a th:href="@{/home/create}">Create new customer</a>
 
-<table>
+<table id="customers">
     <tr>
-        <td>Name</td>
-        <td>Email</td>
-        <td>Address</td>
-        <td>Edit</td>
-        <td>Delete</td>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Edit</th>
+        <th>Delete</th>
     </tr>
     <th:block th:each="customer:${customerList}">
         <tr>
@@ -33,5 +31,6 @@
 
 
 </table>
+<footer th:replace="/layout :: footer"></footer>
 </body>
 </html>

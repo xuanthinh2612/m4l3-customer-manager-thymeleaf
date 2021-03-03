@@ -40,8 +40,13 @@ public class CustomerService implements ICustomerService{
 
     @Override
     public void update(Customer customer) {
-
-        customerList.set(customer.getId(),customer);
+        int index = 0;
+        for (int i = 0; i < customerList.size(); i++) {
+            if (customerList.get(i).getId()==customer.getId()){
+                index=i;
+            }
+        }
+        customerList.set(index,customer);
     }
 
     @Override

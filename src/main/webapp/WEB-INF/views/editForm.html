@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Edit Customer Information</title>
+<head th:replace="layout::head">
 </head>
 <body>
 
-<h1>Edit Customer Information</h1>
+<h3>Edit Customer Information</h3>
 <form method="post" th:object="${customer}">
-    <table>
+    <table id="customers">
         <tr>
             <td>Name</td>
             <td><input th:field="*{name}" ></td>
@@ -26,6 +24,6 @@
     <button type="submit">Submit</button>
 
 </form>
-
+<footer th:replace="/layout :: footer"></footer>
 </body>
 </html>

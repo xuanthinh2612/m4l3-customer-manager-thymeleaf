@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Edit Customer Information</title>
+<head th:replace="layout::head">
 </head>
 <body>
 
 <h1>Edit Customer Information</h1>
-<h2 th:if="${mess}" th:text="${mess}"></h2>
+<h3 th:if="${mess}" th:text="${mess}"></h3>
 <form method="post" th:object="${customer}">
-    <table>
+    <table id="customers">
         <tr>
             <td>Name</td>
-            <td><input th:field="*{name}" ></td>
+            <td><input th:field="*{name}"></td>
         </tr>
         <tr>
             <td>Email</td>
@@ -27,6 +25,6 @@
     <button type="submit">Submit</button>
 
 </form>
-
+<footer th:replace="/layout :: footer"></footer>
 </body>
 </html>
